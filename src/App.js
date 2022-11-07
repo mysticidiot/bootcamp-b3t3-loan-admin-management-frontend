@@ -9,7 +9,9 @@ import Login from './pages/login';
 import ItemsMasterData from './pages/items_master_data';
 
 function App() {
+ 
   return (
+    
     <BrowserRouter>
       <Routes>
         
@@ -22,6 +24,7 @@ function App() {
         <Route path = "" element = {<Login/>}/>
       </Routes>
     </BrowserRouter>
+    
   );
 }
 
