@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 function AdminDashboard() {
-    const loggedInUser = localStorage.getItem("authenticated");
+    const isLoggedIn = localStorage.getItem("authenticated");
     const navigate = useNavigate();
     const [authenticated, setauthenticated] = useState(null);
     const adminButtonOnClick = (e) =>{
@@ -23,7 +23,7 @@ function AdminDashboard() {
     //     console.log("Hello");
         
     // },[console.log("Rishabh")]);
-    if(!loggedInUser)
+    if(!isLoggedIn)
     {
         alert("Please Login");
         return <Navigate replace to = "/"></Navigate>;

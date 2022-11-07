@@ -5,6 +5,7 @@ import './login.css';
 import AdminDashboard from './admin_dashboard';
 import {Redirect} from 'react-router';
 import { useNavigate, Navigate } from 'react-router-dom';
+import { tryLogin } from '../services/LoginService';
 
 export default function Login() {
 
@@ -15,20 +16,28 @@ export default function Login() {
 
     const loginfunc = () =>
     {     
-            if(document.getElementById("user-value").value === "Admin" && document.getElementById("pass-value").value === "Admin")
-            {
-                alert("Successful!");  
-                //<AdminDashboard/> 
-                localStorage.setItem("authenticated", true)  ;          
-                navigate("/dashboard") ;
-                //return <Navigate replace to = "/dashboard"></Navigate>
-                         
-                
+            const username = document.getElementById("user-value").value 
+           
+            const password = document.getElementById("pass-value").value
+          
+            let data = {
+                "username" : username,
+                "password" : password
             }
-            else{
-                alert("Username or Password is wrong!");
-            }
-        
+            tryLogin(data)
+                .then(response => {
+                    if(response.authenticated == "yes"){
+                        alert("Successful!");  
+                        //<AdminDashboard/> 
+                        localStorage.setItem("authenticated", true)  
+                        localStorage.setItem("userLoggedIn",response.username)          
+                        navigate("/dashboard") ;
+                    }
+                    else{
+                        alert("Username or Password is wrong!");
+                    }
+                })
+                .catch(err => console.log("forbidden"))
     }
     return(
         <div className="login-page">
