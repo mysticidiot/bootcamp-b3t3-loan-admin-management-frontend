@@ -7,7 +7,7 @@ import LoanCardManagement from './pages/loan_card_management'
 import CustomerDataManagement from './pages/customer_data_management';
 import Login from './pages/login';
 import ItemsMasterData from './pages/items_master_data';
-
+import DisplayLoanCard from './pages/DisplayLoanCard';
 function App() {
  
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path = "itemsMasterData" element = {<ItemsMasterData/>}/>
         <Route path = "login" element = {<Login/>}/>
         <Route path = "" element = {<Login/>}/>
+         <Route path = "data" element = {<DisplayLoanCard/>}/>
       </Routes>
     </BrowserRouter>
     
