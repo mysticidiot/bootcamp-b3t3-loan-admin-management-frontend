@@ -12,7 +12,7 @@ import './page.css';
 
 export default function LoanCardManagement()  {
     const loggedInUser = localStorage.getItem("authenticated");
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -60,6 +60,9 @@ export default function LoanCardManagement()  {
                 <Button variant="outlined" onClick={handleClickOpen}>
                     Add Loan Card
                 </Button>
+                <Button variant="outlined" onClick={e=>window.location.href='/loanCardManagement'}>
+                View all cards                </Button>
+
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>Add Loan Card</DialogTitle>
                     <DialogContent>

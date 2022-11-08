@@ -2,9 +2,10 @@
 import React from "react"
 import { DisplayCardAPI } from '../services/LoginService';
 import { DeleteCardAPI } from '../services/LoginService';
-
+import {Routes,Route,useNavigate} from 'react-router-dom'
 
 class DisplayLoanCard extends React.Component{
+
     constructor(props){
         super(props)
         this.state ={
@@ -15,6 +16,7 @@ class DisplayLoanCard extends React.Component{
             this.setState({list:data})
         });
     }
+
 
     delete = (id)=>{
         DeleteCardAPI(id);
@@ -78,8 +80,8 @@ class DisplayLoanCard extends React.Component{
                     
                     marginTop : "30px"
             }}>
-            <button  className ="btn btn-outline-success btn-sm">
-                    Add
+            <button  className ="btn btn-outline-success btn-sm" onClick={(e)=>window.location.href='/addLoanCard'}>
+                    Add Card
                 </button>
             </div>
             </div>

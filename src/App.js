@@ -17,12 +17,12 @@ function App() {
         
         <Route path ="helloworld" element = {<HelloWorld/>} />
         <Route path ="dashboard" element = {<AdminDashboard/>} />
-        <Route path = "loanCardManagement" element = {<LoanCardManagement/>}/>
+        <Route path = "loanCardManagement" element = {<DisplayLoanCard/>}/>
         <Route path = "customerDataManagement" element = {<CustomerDataManagement/>}/>
         <Route path = "itemsMasterData" element = {<ItemsMasterData/>}/>
         <Route path = "login" element = {<Login/>}/>
         <Route path = "" element = {<Login/>}/>
-         <Route path = "data" element = {<DisplayLoanCard/>}/>
+         <Route path = "addLoanCard" element = {<LoanCardManagement/>}/>
       </Routes>
     </BrowserRouter>
     
