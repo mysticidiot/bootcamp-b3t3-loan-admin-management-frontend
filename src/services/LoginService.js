@@ -14,7 +14,7 @@ export async function tryLogin(data){
 export async function DisplayCardAPI(){
     const response = await fetch(apiEndpoints.DISPLAY_CARD_API, {
         method : 'GET',
-        headers : {'Content-Type' : 'application/json'},
+      //  headers : {'Content-Type' : 'application/json'},
     
     })
     return await (response.json());

@@ -24,6 +24,10 @@ export default function LoanCardManagement()  {
     const addLoanCard = () =>
     {
         console.log(document.getElementById("loanId").value)
+        if(document.getElementById("loanId").value == "" || document.getElementById("loanName").value == "" || document.getElementById("loanduration").value == ""){
+            alert("Fields cant be empty")
+            return;
+        }
         axios
         .post("http://localhost:8080/LAMA/card/add", {
           loan_id:document.getElementById("loanId").value,
@@ -32,14 +36,22 @@ export default function LoanCardManagement()  {
         })
         .then(
           (response) => {
+            if(response.status != 200){
+                console.log(response)
+                throw new Error(response)
+            }
             console.log(response.data);
             alert(response.data);
-          },
-          (error) => {
-            console.log(error);
-            alert("Some error occured. Try ");
-          }
-        );
+        //   },
+        //   (error) => {
+        //     console.log(error);
+        //     alert("Some error occured. Try ");
+        //   }
+          })
+          .catch(err => {
+            console.log(err)
+            alert(err.response.data.Exception)
+          });
     
         setOpen(false);
     };
