@@ -7,6 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import axios from "axios"
 import './page.css';
 
 export default function LoanCardManagement()  {
@@ -22,7 +23,25 @@ export default function LoanCardManagement()  {
     };
     const addLoanCard = () =>
     {
-
+        console.log(document.getElementById("loanId").value)
+        axios
+        .post("http://localhost:8080/LAMA/card/add", {
+          loan_id:document.getElementById("loanId").value,
+          loan_type:document.getElementById("loanName").value ,
+          duration_in_years:document.getElementById("loanduration").value  
+        })
+        .then(
+          (response) => {
+            console.log(response.data);
+            alert(response.data);
+          },
+          (error) => {
+            console.log(error);
+            alert("Some error occured. Try ");
+          }
+        );
+    
+        setOpen(false);
     };
     if(!loggedInUser)
     {
@@ -36,9 +55,10 @@ export default function LoanCardManagement()  {
                 <div><h2>Loan Card Management</h2></div>
                 <br/>
                 <br/>
+
                 <div>
                 <Button variant="outlined" onClick={handleClickOpen}>
-                    Open form dialog
+                    Add Loan Card
                 </Button>
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>Add Loan Card</DialogTitle>
@@ -65,7 +85,7 @@ export default function LoanCardManagement()  {
                         variant="standard"
                     />
                     <br/><br/>
-                    Duration (In Months) =&nbsp;
+                    Duration (In Years) =&nbsp;
                     <TextField
                         autoFocus
                         margin="solid"
@@ -78,7 +98,7 @@ export default function LoanCardManagement()  {
                     </DialogContent>
                     <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Add</Button>
+                    <Button onClick={addLoanCard}>Add</Button>
                     </DialogActions>
                 </Dialog>
                 </div>
