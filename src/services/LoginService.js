@@ -10,3 +10,20 @@ export async function tryLogin(data){
     })
     return await response.json();
 }
+
+export async function DisplayCardAPI(){
+    const response = await fetch(apiEndpoints.DISPLAY_CARD_API, {
+        method : 'GET',
+        headers : {'Content-Type' : 'application/json'},
+    
+    })
+    return await (response.json());
+}
+
+export async function DeleteCardAPI(id){
+    const response = await fetch(apiEndpoints.DELETE_CARD_API + "/"+id, {
+        method : 'GET',
+        headers : {'Content-Type' : 'application/json'},
+      })
+    return await (response.json());
+}
