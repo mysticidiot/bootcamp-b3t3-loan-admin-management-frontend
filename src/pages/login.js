@@ -42,7 +42,7 @@ export default function Login() {
     return(
         <div className="login-page">
             <h2>Loan Management Application</h2> 
-            <h3>Admin Login</h3>
+            <h3>Admin Login</h3> 
             <div className='uname-container'>
                 <p>Enter Admin User id =&nbsp;
                 <input type='Text' id = 'user-value' required></input>

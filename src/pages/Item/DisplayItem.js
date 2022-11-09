@@ -1,10 +1,10 @@
 
 import React from "react"
-import { DisplayCardAPI } from '../services/LoginService';
-import { DeleteCardAPI } from '../services/LoginService';
+import { DisplayItemAPI,DeleteItemAPI } from "../../services/ItemService"
+
 import {Routes,Route,useNavigate} from 'react-router-dom'
 
-class DisplayLoanCard extends React.Component{
+class DisplayItem extends React.Component{
 
     constructor(props){
         super(props)
@@ -12,30 +12,35 @@ class DisplayLoanCard extends React.Component{
             list:[]      
         }
        
-        DisplayCardAPI().then((data)=>{console.log(data)
+        DisplayItemAPI().then((data)=>{console.log(data)
             this.setState({list:data})
         });
     }
 
 
     delete = (id)=>{
-        DeleteCardAPI(id);
+        DeleteItemAPI(id);
         window.location.reload(false);
     }
 
     render(){
         let tb = this.state.list.map((item)=>{return (
         <tr>
-            <td>{item.loan_id}</td>
-            <td>{item.loan_type}</td>
-            <td>{item.duration_in_years}</td>
+            <td>{item.item_id}</td>
+            <td>{item.item_description}</td>
+            <td>{item.item_status}</td>
+            <td>{item.item_make}</td>
+            <td>{item.item_category}</td>
+            <td>{item.item_valuation}</td>
+            
+
             <td>
                 <button  className ="btn btn-outline-primary btn-sm">
                     Edit
                 </button>
             </td>
             <td>
-                <button  className ="btn btn-outline-danger btn-sm" onClick={()=>this.delete(item.loan_id)}>
+                <button  className ="btn btn-outline-danger btn-sm" onClick={()=>this.delete(item.item_id)}>
                     Delete
                 </button>
             </td>
@@ -51,20 +56,29 @@ class DisplayLoanCard extends React.Component{
                     width:"85vw",
                     marginTop : "30px"
             }} ><h5 class="card-header">
-            Loan Cards
+           Item Details
           </h5><div className="card-body">
-
-          <table className = "table table-striped">
-                        <thead >
+                    <table className = "table table-striped">
+                        <thead>
                             <th>
                                 ID
                             </th>
                             <th>
-                                Card Type
+                                Item Description
                             </th>
                             <th>
-                                Duration
+                                Issue Status
                             </th>
+                            <th>
+                                Item Make
+                            </th>
+                            <th>
+                                Item Category 
+                            </th>
+                            <th>
+                                Item Valuation
+                            </th>
+                            
                             <th>
                                 Edit
                             </th>
@@ -78,19 +92,18 @@ class DisplayLoanCard extends React.Component{
                         </tbody>
                        
                     </table>
-          </div>
-                    
+                    </div>
             </div>
             <div className="conatin" style={{
                     
                     marginTop : "30px"
             }}>
-            <button  className ="btn btn-success btn-sm" onClick={(e)=>window.location.href='/addLoanCard'}>
-                    Add Card
+            <button  className ="btn btn-success btn-sm" onClick={(e)=>window.location.href='/addItem'}>
+                    Add Item
                 </button>
             </div>
             </div>
         )
     }
 }
-export default DisplayLoanCard
+export default DisplayItem

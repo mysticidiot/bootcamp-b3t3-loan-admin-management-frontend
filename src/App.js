@@ -8,6 +8,10 @@ import CustomerDataManagement from './pages/customer_data_management';
 import Login from './pages/login';
 import ItemsMasterData from './pages/items_master_data';
 import DisplayLoanCard from './pages/DisplayLoanCard';
+import DisplayEmployee from './pages/Employee/DisplayEmployee'
+import AddEmployee from './pages/Employee/AddEmployee';
+import DisplayItem from './pages/Item/DisplayItem';
+import AddItem from './pages/Item/AddItem';
 function App() {
  
   return (
@@ -18,11 +22,13 @@ function App() {
         <Route path ="helloworld" element = {<HelloWorld/>} />
         <Route path ="dashboard" element = {<AdminDashboard/>} />
         <Route path = "loanCardManagement" element = {<DisplayLoanCard/>}/>
-        <Route path = "customerDataManagement" element = {<CustomerDataManagement/>}/>
-        <Route path = "itemsMasterData" element = {<ItemsMasterData/>}/>
+        <Route path = "customerDataManagement" element = {<DisplayEmployee/>}/>
+        <Route path = "itemsMasterData" element = {<DisplayItem/>}/>
         <Route path = "login" element = {<Login/>}/>
         <Route path = "" element = {<Login/>}/>
          <Route path = "addLoanCard" element = {<LoanCardManagement/>}/>
+         <Route path = "addEmployee" element = {<AddEmployee/>}/>
+         <Route path = "addItem" element = {<AddItem/>}/>
       </Routes>
     </BrowserRouter>
     

@@ -31,12 +31,30 @@ function AdminDashboard() {
     else{
         return (
             <div className = "dashboard-container">
-                <div><b>Loan Management Application</b></div>
-                <div>Admin Dashboard</div>
-                <div className = "admin-dashboard-buttons-container">
-                    <button onClick = {adminButtonOnClick} className ="dashboard-button" name = "customerDataManagement">Customer Data Management</button>
-                    <button onClick = {adminButtonOnClick} className ="dashboard-button" name = "loanCardManagement">Loan Card Management</button>
-                    <button onClick = {adminButtonOnClick} className ="dashboard-button" name = "itemsMasterData">Items Master Data</button>
+                <h3><b>Loan Management Application</b></h3>
+               
+                <div class="row" style={{width:"80vw", marginLeft:"10vw", marginTop:"40px"}}>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <button onClick = {adminButtonOnClick} className ="btn btn-primary" name = "customerDataManagement">Employee Data Management</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <button onClick = {adminButtonOnClick} className ="btn btn-primary" name = "loanCardManagement">Loan Card Management</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <button onClick = {adminButtonOnClick} className ="btn btn-primary" name = "itemsMasterData">Items Master Data</button>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
