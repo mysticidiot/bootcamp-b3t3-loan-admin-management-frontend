@@ -2,11 +2,6 @@ import React from "react";
 import { DisplayCardAPI } from "../services/LoginService";
 import { DeleteCardAPI } from "../services/LoginService";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
-
-import React from "react"
-import { DisplayCardAPI } from '../services/LoginService';
-import { DeleteCardAPI } from '../services/LoginService';
-import {Routes,Route,useNavigate} from 'react-router-dom'
 import EditLoanCard from "./EditLoanCard";
 class DisplayLoanCard extends React.Component {
   constructor(props) {

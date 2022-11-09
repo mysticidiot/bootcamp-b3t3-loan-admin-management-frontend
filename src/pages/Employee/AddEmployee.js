@@ -21,7 +21,7 @@ export default function AddEmployee() {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
   const add = () => {
     console.log(document.getElementById("a").value);
     if(document.getElementById("a").value == "") {
@@ -126,6 +126,7 @@ export default function AddEmployee() {
               id="e"
               // label="Loan Name"
               type="text"
+              inputProps = {{ maxLength : 1}}
               // fullWidth
               variant="standard"
             />

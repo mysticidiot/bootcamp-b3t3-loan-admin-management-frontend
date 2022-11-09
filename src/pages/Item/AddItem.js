@@ -67,7 +67,7 @@ export default function AddItem() {
     return (
       <div className="page">
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Add Employee</DialogTitle>
+          <DialogTitle>Add Item</DialogTitle>
           <DialogContent>
             Item ID =&nbsp;
             <TextField
@@ -100,6 +100,7 @@ export default function AddItem() {
               id="issue_status"
               // label="Loan Duration"
               type="text"
+              inputProps = {{ maxLength : 1}}
               // fullWidth
               variant="standard"
             />
