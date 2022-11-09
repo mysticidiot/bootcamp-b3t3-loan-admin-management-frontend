@@ -13,6 +13,7 @@ import './page.css';
 export default function LoanCardManagement()  {
     const loggedInUser = localStorage.getItem("authenticated");
     const [open, setOpen] = React.useState(true);
+    const [value, setValue] = React.useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -54,6 +55,7 @@ export default function LoanCardManagement()  {
           });
     
         setOpen(false);
+        setValue(true);
     };
     if(!loggedInUser)
     {
@@ -62,19 +64,13 @@ export default function LoanCardManagement()  {
     }
     else
     {
+        if(value){
+            return <Navigate to='/loanCardManagement'></Navigate>
+
+        }
         return (
             <div className="page">
-                <div><h2>Loan Card Management</h2></div>
-                <br/>
-                <br/>
-
-                <div>
-                <Button variant="outlined" onClick={handleClickOpen}>
-                    Add Loan Card
-                </Button>
-                <Button variant="outlined" onClick={e=>window.location.href='/loanCardManagement'}>
-                View all cards                </Button>
-
+                
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>Add Loan Card</DialogTitle>
                     <DialogContent>
@@ -112,11 +108,11 @@ export default function LoanCardManagement()  {
                     />
                     </DialogContent>
                     <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
+                    
                     <Button onClick={addLoanCard}>Add</Button>
                     </DialogActions>
                 </Dialog>
-                </div>
+                
             </div>
         )
     }
