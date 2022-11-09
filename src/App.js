@@ -1,6 +1,5 @@
 
 import './App.css';
-import HelloWorld from './pages/hello_world';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import AdminDashboard from './pages/admin_dashboard'
 import LoanCardManagement from './pages/LoanCard/AddLoanCard'
@@ -20,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         
-        <Route path ="helloworld" element = {<HelloWorld/>} />
+        
         <Route path ="dashboard" element = {<AdminDashboard/>} />
         <Route path = "loanCardManagement" element = {<DisplayLoanCard/>}/>
         <Route path = "employeesDataManagement" element = {<DisplayEmployee/>}/>
