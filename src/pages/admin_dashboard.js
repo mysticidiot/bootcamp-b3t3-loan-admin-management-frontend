@@ -42,7 +42,7 @@ function AdminDashboard() {
                 <button
                   onClick={adminButtonOnClick}
                   className="btn btn-primary"
-                  name="customerDataManagement"
+                  name="employeesDataManagement"
                 >
                   Employee Data Management
                 </button>

@@ -7,10 +7,9 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { EditCard} from '../services/LoginService';
 import axios from "axios";
 
-import './page.css';
+import '../page.css';
 
 export default function EditLoanCard(e)  {
     const loan = JSON.parse(localStorage.getItem('item'))

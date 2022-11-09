@@ -8,7 +8,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import axios from "axios";
-import "./page.css";
+import "../page.css";
 
 export default function LoanCardManagement() {
   const loggedInUser = localStorage.getItem("authenticated");

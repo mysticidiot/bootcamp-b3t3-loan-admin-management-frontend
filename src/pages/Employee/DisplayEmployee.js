@@ -24,6 +24,13 @@ class DisplayEmployee extends React.Component {
     window.location.reload(false);
   };
 
+  parsefunc=(item)=>
+  {
+      localStorage.setItem('item',JSON.stringify(item));
+      console.log(item);
+      window.location.href='/EditEmployee';
+  }
+
   render() {
     let tb = this.state.list.map((item) => {
       return (
@@ -37,7 +44,8 @@ class DisplayEmployee extends React.Component {
           <td>{item.date_of_joining}</td>
 
           <td>
-            <button className="btn btn-outline-primary btn-sm">Edit</button>
+            <button className="btn btn-outline-primary btn-sm"
+             onClick={() => this.parsefunc(item)}>Edit</button>
           </td>
           <td>
             <button
