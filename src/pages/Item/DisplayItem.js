@@ -25,6 +25,13 @@ class DisplayItem extends React.Component {
     this.props.history.push("/dashboard");
   }
 
+  parsefunc=(item)=>
+  {
+      localStorage.setItem('item',JSON.stringify(item));
+      console.log(item);
+      window.location.href='/EditItem';
+  }
+
   render() {
     let tb = this.state.list.map((item) => {
       return (
@@ -37,7 +44,8 @@ class DisplayItem extends React.Component {
           <td>{item.item_valuation}</td>
 
           <td>
-            <button className="btn btn-outline-primary btn-sm">Edit</button>
+            <button className="btn btn-outline-primary btn-sm"
+            onClick={() => this.parsefunc(item)}>Edit</button>
           </td>
           <td>
             <button
