@@ -20,13 +20,11 @@ class DisplayLoanCard extends React.Component {
     window.location.reload(false);
   };
 
-  parsefunc=(item)=>
-  {
-      localStorage.setItem('item',JSON.stringify(item));
-      console.log(item);
-      window.location.href='/EditLoanCard';
-  }
-
+  parsefunc = (item) => {
+    localStorage.setItem("item", JSON.stringify(item));
+    console.log(item);
+    window.location.href = "/EditLoanCard";
+  };
 
   render() {
     let tb = this.state.list.map((item) => {
@@ -36,11 +34,16 @@ class DisplayLoanCard extends React.Component {
           <td>{item.loan_type}</td>
           <td>{item.duration_in_years}</td>
           <td>
-            <button className="btn btn-outline-primary btn-sm" onClick={() => this.parsefunc(item)}>Edit</button>
+            <button
+              className="btn btn-warning btn-sm"
+              onClick={() => this.parsefunc(item)}
+            >
+              Edit
+            </button>
           </td>
           <td>
             <button
-              className="btn btn-outline-danger btn-sm"
+              className="btn btn-danger btn-sm"
               onClick={() => this.delete(item.loan_id)}
             >
               Delete
@@ -93,8 +96,10 @@ class DisplayLoanCard extends React.Component {
           >
             Add Card
           </button>
-          <button className="btn btn-warning btn-sm">
-            <Link to="/dashboard">Dashboard</Link>
+          <button className="btn btn-primary btn-sm">
+            <Link className="link-light" to="/dashboard">
+              Dashboard
+            </Link>
           </button>
         </div>
       </div>

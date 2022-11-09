@@ -25,12 +25,11 @@ class DisplayItem extends React.Component {
     this.props.history.push("/dashboard");
   }
 
-  parsefunc=(item)=>
-  {
-      localStorage.setItem('item',JSON.stringify(item));
-      console.log(item);
-      window.location.href='/EditItem';
-  }
+  parsefunc = (item) => {
+    localStorage.setItem("item", JSON.stringify(item));
+    console.log(item);
+    window.location.href = "/EditItem";
+  };
 
   render() {
     let tb = this.state.list.map((item) => {
@@ -44,12 +43,16 @@ class DisplayItem extends React.Component {
           <td>{item.item_valuation}</td>
 
           <td>
-            <button className="btn btn-outline-primary btn-sm"
-            onClick={() => this.parsefunc(item)}>Edit</button>
+            <button
+              className="btn btn-warning btn-sm"
+              onClick={() => this.parsefunc(item)}
+            >
+              Edit
+            </button>
           </td>
           <td>
             <button
-              className="btn btn-outline-danger btn-sm"
+              className="btn btn-danger btn-sm"
               onClick={() => this.delete(item.item_id)}
             >
               Delete
@@ -107,8 +110,10 @@ class DisplayItem extends React.Component {
             >
               Add Item
             </button>
-            <button className="btn btn-warning btn-sm">
-              <Link to="/dashboard">Dashboard</Link>
+            <button className="btn btn-primary btn-sm">
+              <Link className="link-light" to="/dashboard">
+                Dashboard
+              </Link>
             </button>
           </div>
         </div>

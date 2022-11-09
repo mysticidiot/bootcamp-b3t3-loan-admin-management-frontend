@@ -24,12 +24,11 @@ class DisplayEmployee extends React.Component {
     window.location.reload(false);
   };
 
-  parsefunc=(item)=>
-  {
-      localStorage.setItem('item',JSON.stringify(item));
-      console.log(item);
-      window.location.href='/EditEmployee';
-  }
+  parsefunc = (item) => {
+    localStorage.setItem("item", JSON.stringify(item));
+    console.log(item);
+    window.location.href = "/EditEmployee";
+  };
 
   render() {
     let tb = this.state.list.map((item) => {
@@ -44,12 +43,16 @@ class DisplayEmployee extends React.Component {
           <td>{item.date_of_joining}</td>
 
           <td>
-            <button className="btn btn-outline-primary btn-sm"
-             onClick={() => this.parsefunc(item)}>Edit</button>
+            <button
+              className="btn btn-warning btn-sm"
+              onClick={() => this.parsefunc(item)}
+            >
+              Edit
+            </button>
           </td>
           <td>
             <button
-              className="btn btn-outline-danger btn-sm"
+              className="btn btn-danger btn-sm"
               onClick={() => this.delete(item.employee_id)}
             >
               Delete
@@ -106,8 +109,10 @@ class DisplayEmployee extends React.Component {
           >
             Add Employee
           </button>
-          <button className="btn btn-warning btn-sm">
-            <Link to="/dashboard">Dashboard</Link>
+          <button className="btn btn-primary btn-sm">
+            <Link className="link-light" to="/dashboard">
+              Dashboard
+            </Link>
           </button>
         </div>
       </div>
