@@ -24,8 +24,9 @@ export default function AddEmployee() {
 
   const add = () => {
     console.log(document.getElementById("a").value);
-    if(document.getElementById("a").value == "") {
+    if (document.getElementById("a").value == "") {
       alert("ID cant be empty");
+      setValue(true);
       return;
     }
     axios
@@ -126,7 +127,7 @@ export default function AddEmployee() {
               id="e"
               // label="Loan Name"
               type="text"
-              inputProps = {{ maxLength : 1}}
+              inputProps={{ maxLength: 1 }}
               // fullWidth
               variant="standard"
             />

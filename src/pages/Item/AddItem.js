@@ -23,8 +23,9 @@ export default function AddItem() {
   };
   const add = () => {
     console.log(document.getElementById("item_id").value);
-    if(document.getElementById("item_id").value == "") {
+    if (document.getElementById("item_id").value == "") {
       alert("ID cant be empty");
+      setValue(true);
       return;
     }
     axios
@@ -100,7 +101,7 @@ export default function AddItem() {
               id="issue_status"
               // label="Loan Duration"
               type="text"
-              inputProps = {{ maxLength : 1}}
+              inputProps={{ maxLength: 1 }}
               // fullWidth
               variant="standard"
             />
