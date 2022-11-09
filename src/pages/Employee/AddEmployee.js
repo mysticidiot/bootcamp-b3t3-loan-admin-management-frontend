@@ -65,7 +65,7 @@ export default function AddEmployee() {
     return <Navigate replace to="/"></Navigate>;
   } else {
     if (value) {
-      return <Navigate to="/customerDataManagement"></Navigate>;
+      return <Navigate to="/employeesDataManagement"></Navigate>;
     }
     return (
       <div className="page">
