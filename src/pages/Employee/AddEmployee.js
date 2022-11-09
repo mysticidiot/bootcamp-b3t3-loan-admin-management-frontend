@@ -24,9 +24,8 @@ export default function AddEmployee()  {
     };
     const add = () =>
     {
-        console.log(document.getElementById("a").value)
-        if(false){
-            alert("Fields cant be empty")
+        if(document.getElementById("a").value == ""){
+            alert("Id cant be empty")
             return;
         }
         axios

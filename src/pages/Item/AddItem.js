@@ -25,8 +25,8 @@ export default function AddItem()  {
     const add = () =>
     {
         console.log(document.getElementById("item_id").value)
-        if(false){
-            alert("Fields cant be empty")
+        if(document.getElementById("item_id").value == ""){
+            alert("ID cant be empty")
             return;
         }
         axios

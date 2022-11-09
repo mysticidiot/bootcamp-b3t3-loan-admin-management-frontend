@@ -12,6 +12,7 @@ import DisplayEmployee from './pages/Employee/DisplayEmployee'
 import AddEmployee from './pages/Employee/AddEmployee';
 import DisplayItem from './pages/Item/DisplayItem';
 import AddItem from './pages/Item/AddItem';
+import EditLoanCard from './pages/EditLoanCard';
 function App() {
  
   return (
@@ -29,6 +30,7 @@ function App() {
          <Route path = "addLoanCard" element = {<LoanCardManagement/>}/>
          <Route path = "addEmployee" element = {<AddEmployee/>}/>
          <Route path = "addItem" element = {<AddItem/>}/>
+         <Route path = "editLoanCard" element = {<EditLoanCard/>}/>
       </Routes>
     </BrowserRouter>
     
