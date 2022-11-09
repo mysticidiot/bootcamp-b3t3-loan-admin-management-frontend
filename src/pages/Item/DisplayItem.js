@@ -38,7 +38,7 @@ class DisplayItem extends React.Component {
         <tr>
           <td>{item.item_id}</td>
           <td>{item.item_description}</td>
-          <td>{item.item_status}</td>
+          <td>{item.issue_status}</td>
           <td>{item.item_make}</td>
           <td>{item.item_category}</td>
           <td>{item.item_valuation}</td>
