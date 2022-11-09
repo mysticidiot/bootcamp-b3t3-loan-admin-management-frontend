@@ -14,7 +14,6 @@ export default function AddItem()  {
     const loggedInUser = localStorage.getItem("authenticated");
     const [open, setOpen] = React.useState(true);
     const [value, setValue] = React.useState(false);
-
     const handleClickOpen = () => {
         setOpen(true);
     };
